@@ -5,6 +5,9 @@ image: louislam/uptime-kuma:latest
 icon: shield
 accent: from-emerald-500 to-teal-500
 category: monitoring
+tags:
+  - monitoring
+  - uptime
 featured: true
 defaultVersion: 1.0.0
 highlights:

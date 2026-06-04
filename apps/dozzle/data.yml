@@ -5,6 +5,9 @@ image: amir20/dozzle:latest
 icon: terminal
 accent: from-violet-500 to-fuchsia-500
 category: observability
+tags:
+  - docker
+  - logs
 featured: false
 defaultVersion: 1.0.0
 highlights:
