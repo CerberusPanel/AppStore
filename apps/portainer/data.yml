@@ -1,0 +1,13 @@
+id: portainer
+name: Portainer
+description: Container management UI for Docker and Kubernetes.
+image: portainer/portainer-ce:latest
+icon: boxes
+accent: from-sky-500 to-cyan-500
+category: infrastructure
+featured: true
+defaultVersion: 1.0.0
+highlights:
+  - Docker UI
+  - Stack manager
+  - Access control

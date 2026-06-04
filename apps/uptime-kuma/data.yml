@@ -1,0 +1,13 @@
+id: uptime-kuma
+name: Uptime Kuma
+description: Self-hosted monitoring and uptime tracking.
+image: louislam/uptime-kuma:latest
+icon: shield
+accent: from-emerald-500 to-teal-500
+category: monitoring
+featured: true
+defaultVersion: 1.0.0
+highlights:
+  - Uptime monitoring
+  - Status pages
+  - Notifications
