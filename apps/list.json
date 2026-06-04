@@ -1,0 +1,12 @@
+{
+    "apps": [{
+        "name": "Dozzle",
+        "version": "latest"
+    }, {
+        "name": "Portainer",
+        "version": "latest"
+    }, {
+        "name": "Portainer",
+        "version": "latest"
+    }]
+}
