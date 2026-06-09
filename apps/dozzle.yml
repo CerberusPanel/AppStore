@@ -9,8 +9,19 @@ tags:
   - docker
   - logs
 featured: false
-defaultVersion: 1.0.0
 highlights:
   - Log streaming
   - Container filtering
   - Lightweight
+versions:
+  - latest
+links:
+  - github: https://github.com/amir20/dozzle
+readme: https://github.com/amir20/dozzle/raw/refs/heads/master/README.md
+environment:
+  version: latest
+  name: dozzle
+  ports:
+    - 8080:8080:8080
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:DockerSocket

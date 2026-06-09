@@ -1,8 +1,0 @@
-version: 1.0.0
-name: Dozzle
-description: Live Docker log viewer with a lightweight UI.
-image: amir20/dozzle:latest
-icon: terminal
-accent: from-violet-500 to-fuchsia-500
-category: observability
-featured: false

@@ -1,0 +1,30 @@
+id: portainer
+name: Portainer
+description: Container management UI for Docker and Kubernetes.
+image: portainer/portainer-ce:latest
+icon: boxes
+accent: from-sky-500 to-cyan-500
+category: infrastructure
+tags:
+  - docker
+  - kubernetes
+featured: true
+highlights:
+  - Docker UI
+  - Stack manager
+  - Access control
+versions:
+  - latest
+links:
+  - github: https://github.com/portainer/portainer
+  - docs: https://docs.portainer.io/
+readme: https://github.com/portainer/portainer/raw/refs/heads/master/README.md
+environment:
+  version: latest
+  name: portainer
+  ports:
+    - 9000:9000:9000
+    - 9443:9443:9443
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:DockerSocket
+    - ./data:/data:PortainerData
