@@ -1,46 +1,59 @@
 id: uptime-kuma
-logo: https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png
 name: Uptime Kuma
+logo: https://raw.githubusercontent.com/louislam/uptime-kuma/master/public/icon.png
 description: Self-hosted monitoring and uptime tracking.
-image: louislam/uptime-kuma:2
 category: monitoring
+featured: true
+
+image: louislam/uptime-kuma
+
 tags:
   - monitoring
   - uptime
-featured: true
+
 highlights:
   - Uptime monitoring
   - Status pages
   - Notifications
+
 readme: https://github.com/louislam/uptime-kuma/raw/refs/heads/master/README.md
+
 versions:
-  - 2
-  - 2-slim
+  - tag: "2"
+    label: "Version 2"
+  - tag: "2-slim"
+    label: "Version 2 Slim"
+
 links:
-  - github: https://github.com/louislam/uptime-kuma
-  - docs: https://github.com/louislam/uptime-kuma/wiki
-  - website: https://uptime.kuma.pet/
-versions:
-    # This section is for environment variables. These variables are
-    # changeable in the web UI and will makeup the compose files.
-    #
-    # All variables should be in the format of:
-    # host:container:label
-  2:
-    version: 2
-    name: uptimekuma
+  github: https://github.com/louislam/uptime-kuma
+  docs: https://github.com/louislam/uptime-kuma/wiki
+  website: https://uptime.kuma.pet/
+
+deployments:
+  - version: "2"
+    container_name: uptime-kuma
+    image: louislam/uptime-kuma:2
     ports:
-      # host:container:label
-      - 3001:3001:WebUI
+      - host: 3001
+        container: 3001
+        label: Web UI
     volumes:
-      # host:container:label
-      - ./data:/app/data:General_AppData 
-  1:
-    version: 1
-    name: uptimekuma
+      - host: ./data
+        container: /app/data
+        label: General App Data
+    environment:
+      - name: TZ
+        value: "UTC"
+        label: Timezone
+
+  - version: "2-slim"
+    container_name: uptime-kuma
+    image: louislam/uptime-kuma:2-slim
     ports:
-      # host:container:label
-      - 3001:3001:WebUI
+      - host: 3001
+        container: 3001
+        label: Web UI
     volumes:
-      # host:container:label
-      - ./data:/app/data:General_AppData 
+      - host: ./data
+        container: /app/data
+        label: General App Data

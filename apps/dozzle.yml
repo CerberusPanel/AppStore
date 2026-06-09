@@ -1,27 +1,38 @@
 id: dozzle
 name: Dozzle
 description: Live Docker log viewer with a lightweight UI.
-image: amir20/dozzle:latest
-icon: terminal
-accent: from-violet-500 to-fuchsia-500
 category: observability
+featured: false
+
+image: amir20/dozzle
+
 tags:
   - docker
   - logs
-featured: false
+
 highlights:
   - Log streaming
   - Container filtering
   - Lightweight
-versions:
-  - latest
-links:
-  - github: https://github.com/amir20/dozzle
+
 readme: https://github.com/amir20/dozzle/raw/refs/heads/master/README.md
-environment:
-  version: latest
-  name: dozzle
-  ports:
-    - 8080:8080:8080
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock:DockerSocket
+
+versions:
+  - tag: latest
+    label: Latest
+
+links:
+  github: https://github.com/amir20/dozzle
+
+deployments:
+  - version: latest
+    container_name: dozzle
+    image: amir20/dozzle:latest
+    ports:
+      - host: 8080
+        container: 8080
+        label: Web UI
+    volumes:
+      - host: /var/run/docker.sock
+        container: /var/run/docker.sock
+        label: Docker Socket
