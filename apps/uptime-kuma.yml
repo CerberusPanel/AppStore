@@ -20,16 +20,27 @@ links:
   - github: https://github.com/louislam/uptime-kuma
   - docs: https://github.com/louislam/uptime-kuma/wiki
   - website: https://uptime.kuma.pet/
-environment:
+versions:
     # This section is for environment variables. These variables are
     # changeable in the web UI and will makeup the compose files.
     #
     # All variables should be in the format of:
     # host:container:label
-  version: 2
-  name: uptimekuma
-  ports:
-    - 3001:3001:3001
-  volumes:
-    # host:container:label
-    - ./data:/app/data:General_AppData 
+  2:
+    version: 2
+    name: uptimekuma
+    ports:
+      # host:container:label
+      - 3001:3001:WebUI
+    volumes:
+      # host:container:label
+      - ./data:/app/data:General_AppData 
+  1:
+    version: 1
+    name: uptimekuma
+    ports:
+      # host:container:label
+      - 3001:3001:WebUI
+    volumes:
+      # host:container:label
+      - ./data:/app/data:General_AppData 
