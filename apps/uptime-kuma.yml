@@ -6,6 +6,7 @@ category: monitoring
 featured: true
 
 image: louislam/uptime-kuma
+restart: unless-stopped
 
 tags:
   - monitoring
@@ -20,9 +21,9 @@ readme: https://github.com/louislam/uptime-kuma/raw/refs/heads/master/README.md
 
 versions:
   - tag: "2"
-    label: "Version 2"
+    label: "v2"
   - tag: "2-slim"
-    label: "Version 2 Slim"
+    label: "v2 Slim"
 
 links:
   github: https://github.com/louislam/uptime-kuma
@@ -37,14 +38,20 @@ deployments:
       - host: 3001
         container: 3001
         label: Web UI
+        editable: true
+        required: true
     volumes:
       - host: ./data
         container: /app/data
         label: General App Data
+        editable: true
+        required: true
     environment:
       - name: TZ
         value: "UTC"
         label: Timezone
+        editable: true
+        required: false
 
   - version: "2-slim"
     container_name: uptime-kuma
